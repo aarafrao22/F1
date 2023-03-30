@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:first_app/data/question_list.dart';
 import 'package:flutter/material.dart';
 
@@ -59,7 +61,31 @@ class _HomePageState extends State<HomePage> {
                   height: 20,
                 ),
                 Text(questions[index].question!,
-                    style: const TextStyle(fontSize: 28.0, color: Colors.white))
+                    style:
+                        const TextStyle(fontSize: 28.0, color: Colors.white)),
+                const SizedBox(
+                  height: 35.0,
+                ),
+                for (int i = 0; i < questions[index].answers!.length; i++)
+                  Container(
+                    width: double.infinity,
+                    margin: const EdgeInsets.only(bottom: 8),
+                    child: MaterialButton(
+                      shape: const StadiumBorder(),
+                      color: secondColor,
+                      padding: const EdgeInsets.symmetric(vertical: 18.0),
+                      onPressed: () {},
+                      child: Text(
+                        questions[index].answers!.keys.toList()[i],
+                        style: const TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                const SizedBox(
+                  height: 35.0,
+                ),
+                OutlinedButton(
+                    onPressed: () {}, child: const Text("Next Question"))
               ],
             );
           },
