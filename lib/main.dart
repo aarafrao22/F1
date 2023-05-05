@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:first_app/data/question_list.dart';
 import 'package:flutter/material.dart';
 
@@ -27,15 +25,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Color mainColor = Color(0xFF252c4a);
-  Color secondColor = Color(0xFF117eeb);
+  Color mainColor = const Color(0xFF252c4a);
+  Color secondColor = const Color(0xFF117eeb);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: mainColor,
       body: Padding(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: PageView.builder(
           itemCount: questions.length,
           itemBuilder: (context, index) {
